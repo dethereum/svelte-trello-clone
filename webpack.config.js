@@ -1,8 +1,13 @@
 const path = require('path')
 
+const webpack = require('webpack');
+
 /** @type {import('webpack').Configuration} */
 module.exports = {
-    entry: './src/index.js',
+    entry: [
+        'webpack-hot-middleware/client',
+        './src/index.js'
+    ],
     mode: 'development',
     output: {
       path: path.resolve(__dirname, 'dist'),
@@ -22,9 +27,27 @@ module.exports = {
                 test: /\.(html|svelte)$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: 'svelte-loader',
-                  },
-            }
+                    loader: 'svelte-loader-hot',
+                    options: {
+                        dev: true,
+                        emitCss: false,
+                        hotReload: true,
+                        hotOptions: {
+                            noPreserveState: false,
+                        }
+                    }
+                },
+            },
+            {
+                test: /\.css$/,
+                use: [
+                  'style-loader',
+                  'css-loader',
+                ],
+              },
         ]
-    }
+    },
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+    ]
 }
