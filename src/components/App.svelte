@@ -48,5 +48,5 @@
     light={false}
     class="mb-2"
 >
-    <NavbarBrand href="/"><img class="responsive" {src}>Sally</NavbarBrand>
+    <NavbarBrand href="/"><img class="responsive" {src} alt="Sally Brand">Sally</NavbarBrand>
 </Navbar>
