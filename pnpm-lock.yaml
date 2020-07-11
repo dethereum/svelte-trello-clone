@@ -1,5 +1,8 @@
 dependencies:
+  bootstrap: 4.5.0
+  minireset.css: 0.0.6
   svelte: 3.24.0
+  sveltestrap: 3.4.0_svelte@3.24.0
 devDependencies:
   css-loader: 3.6.0_webpack@4.43.0
   eslint: 7.4.0
@@ -511,6 +514,13 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha512-dhEPs72UPbDnAQJ9ZKMNTP6ptJaionhP5cBb541nXPlW60Jepo9RV/a4fX4XWW9CuFNK22krhrj1+rgzifNCsw==
+  /bootstrap/4.5.0:
+    dev: false
+    peerDependencies:
+      jquery: 1.9.1 - 3
+      popper.js: ^1.16.0
+    resolution:
+      integrity: sha512-Z93QoXvodoVslA+PWNdk23Hze4RBYIkpb5h8I2HY2Tu2h7A0LpAgLcyrhrSUyo2/Oxm2l1fRZPs1e5hnxnliXA==
   /brace-expansion/1.1.11:
     dependencies:
       balanced-match: 1.0.0
@@ -789,6 +799,12 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-n8fOixwDD6b/ObinzTrp1ZKFzbgvKZvuz/TvejnLn1aQfC6r52XEx85FmuC+3HI+JM7coBRXUvNqEU2PHVrHpg==
+  /clsx/1.1.1:
+    dev: false
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-6/bPho624p3S2pMyvP5kKBPXnI3ufHLObBFCfgx+LkeR5lg2XYy2hqZqUf45ypD8COn2bhgGJSUE+l5dhNBieA==
   /collection-visit/1.0.0:
     dependencies:
       map-visit: 1.0.0
@@ -2503,6 +2519,14 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-t7hw9pI+WvuwNJXwk5zVHpyhIqzg2qTlklJOf0mVxGSbe3Fp2VieZcduNYjaLDoy6p9uGpQEGWG87WpMKlNq8g==
+  /lodash.isobject/3.0.2:
+    dev: false
+    resolution:
+      integrity: sha1-PI+41bW/S/kK4G4U8qUwpO2TXh0=
+  /lodash.tonumber/4.0.3:
+    dev: false
+    resolution:
+      integrity: sha1-C5azGzVnJ5Prf1pj7nkfG56QJdk=
   /lodash/4.17.19:
     dev: true
     resolution:
@@ -2688,6 +2712,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
+  /minireset.css/0.0.6:
+    dev: false
+    resolution:
+      integrity: sha512-aluj16Tc1KhEYGDa/tedYzIbZ2Ax/JR25MUQzGkqOrcw/P5OPSlwNNrlLpdULu0xFNnxu2SRHx4rKiIMq3iSTQ==
   /mississippi/3.0.0:
     dependencies:
       concat-stream: 1.6.2
@@ -4075,6 +4103,17 @@ packages:
       node: '>= 8'
     resolution:
       integrity: sha512-VFXom6EP2DK83kxy4ZlBbaZklSbZIrpNH3oNXlPYHJUuW4q1OuAr3ZoYbfIVTVYPDgrI7Yq0gQcOhDlAtO4qfw==
+  /sveltestrap/3.4.0_svelte@3.24.0:
+    dependencies:
+      clsx: 1.1.1
+      lodash.isobject: 3.0.2
+      lodash.tonumber: 4.0.3
+      svelte: 3.24.0
+    dev: false
+    peerDependencies:
+      svelte: ^3.4.4
+    resolution:
+      integrity: sha512-Kk2P+yGJQ5Ur+iUbmWnqFd6eCgPVlly3QPJHNwMJA+63SH5SDcL38HeDhaUsarlBfmRyzTCZ4F79rh0l1fVM5g==
   /table/5.4.6:
     dependencies:
       ajv: 6.12.3
@@ -4522,6 +4561,7 @@ packages:
     resolution:
       integrity: sha512-yr2icI4glYaNG+KWONODapy2/jDdMSDnrONSjblABjD9B4Z5LgiircSt8m8sRZFNi08kG9Sm0uSHtEmP3zaEGg==
 specifiers:
+  bootstrap: ^4.5.0
   css-loader: ^3.6.0
   eslint: ^7.4.0
   eslint-plugin-import: ^2.22.0
@@ -4530,12 +4570,14 @@ specifiers:
   express: ^4.17.1
   husky: ^4.2.5
   lint-staged: ^10.2.11
+  minireset.css: ^0.0.6
   open: ^7.0.4
   prettier: ^2.0.5
   prettier-plugin-svelte: ^1.1.0
   style-loader: ^1.2.1
   svelte: 3.24.0
   svelte-loader-hot: ^0.3.0
+  sveltestrap: ^3.4.0
   webpack: ^4.43.0
   webpack-dev-middleware: ^3.7.2
   webpack-hot-middleware: ^2.25.0
