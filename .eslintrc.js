@@ -13,7 +13,7 @@ module.exports = {
     "overrides": [
         {
             "files": [
-                "webpack.config.js",
+                "webpack.config.*.js",
                 ".eslintrc.js",
                 ".prettierrc.js",
                 "tools/*.js"

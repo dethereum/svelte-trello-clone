@@ -18,7 +18,7 @@ devDependencies:
   style-loader: 1.2.1_webpack@4.43.0
   svelte-loader-hot: 0.3.0_svelte@3.24.0
   webpack: 4.43.0_webpack@4.43.0
-  webpack-dev-middleware: 3.7.2_webpack@4.43.0
+  webpack-dev-middleware: 4.0.0-rc.2_webpack@4.43.0
   webpack-hot-middleware: 2.25.0
 lockfileVersion: 5.1
 packages:
@@ -256,12 +256,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-4K0cK3L1hsqk9xIb2z9vs/XU+PGJZ9PNpJRDS9YLzmNdX6jmVPfamLvTJr0aDAusnHyCHO6MjzlkAsgtqp9teA==
-  /ansi-colors/3.2.4:
-    dev: true
-    engines:
-      node: '>=6'
-    resolution:
-      integrity: sha512-hHUXGagefjN2iRrID63xckIvotOXOojhQKWIPUZ4mNUZ9nLZW+7FMNoE1lOkEhNWYsx/7ysGIuJYCiMAA9FnrA==
   /ansi-colors/4.1.1:
     dev: true
     engines:
@@ -1749,6 +1743,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-i/tVAr3kpNNs/e6gB/zKIdfjgq8=
+  /fs-monkey/1.0.1:
+    dev: true
+    resolution:
+      integrity: sha512-fcSa+wyTqZa46iWweI7/ZiUfegOZl0SG8+dltIwFXo7+zYU9J9kpS3NB6pZcSlJdhvIwp81Adx2XhZorncxiaA==
   /fs-write-stream-atomic/1.0.10:
     dependencies:
       graceful-fs: 4.2.4
@@ -2565,6 +2563,14 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-LS9X+dc8KLxXCb8dni79fLIIUA5VyZoyjSMCwTluaXA0o27cCK0bhXkpgw+sTXVpPy/lSO57ilRixqk0vDmtRA==
+  /map-age-cleaner/0.1.3:
+    dependencies:
+      p-defer: 1.0.0
+    dev: true
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-bJzx6nMoP6PDLPBFmg7+xRKeFZvFboMrGlxmNj9ClvX53KrmvM5bXFXEWjbz4cz1AFn+jWJ9z/DJSz7hrs0w3w==
   /map-cache/0.2.2:
     dev: true
     engines:
@@ -2593,6 +2599,23 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha1-hxDXrwqmJvj/+hzgAWhUUmMlV0g=
+  /mem/6.1.0:
+    dependencies:
+      map-age-cleaner: 0.1.3
+      mimic-fn: 3.0.0
+    dev: true
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-RlbnLQgRHk5lwqTtpEkBTQ2ll/CG/iB+J4Hy2Wh97PjgZgXgWJWrFF+XXujh3UUVLvR4OOTgZzcWMMwnehlEUg==
+  /memfs/3.2.0:
+    dependencies:
+      fs-monkey: 1.0.1
+    dev: true
+    engines:
+      node: '>= 4.0.0'
+    resolution:
+      integrity: sha512-f/xxz2TpdKv6uDn6GtHee8ivFyxwxmPuXatBb1FBwxYNuVpbM3k/Y1Z+vC0mH/dIXXrukYfe3qe5J32Dfjg93A==
   /memory-fs/0.4.1:
     dependencies:
       errno: 0.1.7
@@ -2681,19 +2704,18 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-x0Vn8spI+wuJ1O6S7gnbaQg8Pxh4NNHb7KSINmEWKiPE4RKOplvijn+NkmYmmRgP68mc70j2EbeTFRsrswaQeg==
-  /mime/2.4.6:
-    dev: true
-    engines:
-      node: '>=4.0.0'
-    hasBin: true
-    resolution:
-      integrity: sha512-RZKhC3EmpBchfTGBVb8fb+RL2cWyw/32lshnsETttkBAyAUXSGHxbEJWWRXc751DrIxG1q04b8QwMbAwkRPpUA==
   /mimic-fn/2.1.0:
     dev: true
     engines:
       node: '>=6'
     resolution:
       integrity: sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==
+  /mimic-fn/3.0.0:
+    dev: true
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-PiVO95TKvhiwgSwg1IdLYlCTdul38yZxZMIcnDSFIBUm4BNZha2qpQ4GpJ++15bHoKDtrW2D69lMfFwdFYtNZQ==
   /minimalistic-assert/1.0.1:
     dev: true
     resolution:
@@ -2986,6 +3008,12 @@ packages:
     dev: true
     resolution:
       integrity: sha1-hUNzx/XCMVkU/Jv8a9gjj92h7Cc=
+  /p-defer/1.0.0:
+    dev: true
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha1-n26xgvbJqozXQwBKfU+WsZaw+ww=
   /p-limit/1.3.0:
     dependencies:
       p-try: 1.0.0
@@ -4375,11 +4403,6 @@ packages:
       node: '>= 0.4.0'
     resolution:
       integrity: sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=
-  /uuid/3.4.0:
-    dev: true
-    hasBin: true
-    resolution:
-      integrity: sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
   /v8-compile-cache/2.1.1:
     dev: true
     resolution:
@@ -4420,21 +4443,21 @@ packages:
       watchpack-chokidar2: 2.0.0
     resolution:
       integrity: sha512-ymVbbQP40MFTp+cNMvpyBpBtygHnPzPkHqoIwRRj/0B8KhqQwV8LaKjtbaxF2lK4vl8zN9wCxS46IFCU5K4W0g==
-  /webpack-dev-middleware/3.7.2_webpack@4.43.0:
+  /webpack-dev-middleware/4.0.0-rc.2_webpack@4.43.0:
     dependencies:
-      memory-fs: 0.4.1
-      mime: 2.4.6
-      mkdirp: 0.5.5
+      mem: 6.1.0
+      memfs: 3.2.0
+      mime-types: 2.1.27
       range-parser: 1.2.1
+      schema-utils: 2.7.0
       webpack: 4.43.0_webpack@4.43.0
-      webpack-log: 2.0.0
     dev: true
     engines:
-      node: '>= 6'
+      node: '>= 10.13'
     peerDependencies:
       webpack: ^4.0.0
     resolution:
-      integrity: sha512-1xC42LxbYoqLNAhV6YzTYacicgMZQTqRd27Sim9wn5hJrX3I5nxYy1SxSd4+gjUFsz1dQFj+yEe6zEVmSkeJjw==
+      integrity: sha512-yP04dRrpAVNq1yvRvtkXIP6UCw+hAbWFOgv6dF2rHNYsRYhQuDRVTc09YwbYzyOlmdJzyXxHfNJZ070HVd9cjA==
   /webpack-hot-middleware/2.25.0:
     dependencies:
       ansi-html: 0.0.7
@@ -4444,15 +4467,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-xs5dPOrGPCzuRXNi8F6rwhawWvQQkeli5Ro48PRuQh8pYPCPmNnltP9itiUPT4xI8oW+y0m59lyyeQk54s5VgA==
-  /webpack-log/2.0.0:
-    dependencies:
-      ansi-colors: 3.2.4
-      uuid: 3.4.0
-    dev: true
-    engines:
-      node: '>= 6'
-    resolution:
-      integrity: sha512-cX8G2vR/85UYG59FgkoMamwHUIkSSlV3bBMRsbxVXVUk2j6NleCKjQ/WE9eYg9WY4w25O9w8wKP4rzNZFmUcUg==
   /webpack-sources/1.4.3:
     dependencies:
       source-list-map: 2.0.1
@@ -4579,5 +4593,5 @@ specifiers:
   svelte-loader-hot: ^0.3.0
   sveltestrap: ^3.4.0
   webpack: ^4.43.0
-  webpack-dev-middleware: ^3.7.2
+  webpack-dev-middleware: ^4.0.0-rc.2
   webpack-hot-middleware: ^2.25.0
