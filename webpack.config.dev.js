@@ -12,6 +12,7 @@ const dev = {
     output: {
         publicPath: '/',
     },
+    devtool: 'cheap-eval-source-map',
     mode: 'development',
     module: {
         rules: [
