@@ -37,7 +37,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new HtmlWebpackPlugin(),
+        new HtmlWebpackPlugin({title: 'Sally'}),
         new FaviconsWebpackPlugin(path.resolve(__dirname, 'assets/images/cream.png')),
     ]
 }
