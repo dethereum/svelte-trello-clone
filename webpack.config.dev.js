@@ -1,3 +1,4 @@
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 const webpack = require('webpack');
 const { merge } = require('webpack-merge');
 
@@ -33,6 +34,7 @@ const dev = {
         ]
     },
     plugins: [
+        new HardSourceWebpackPlugin(),
         new webpack.HotModuleReplacementPlugin(),
     ]
 }
