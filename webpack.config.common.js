@@ -3,6 +3,21 @@ const path = require('path')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const templateContent = ({htmlWebpackPlugin}) => `
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>${htmlWebpackPlugin.options.title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  </head>
+  <body>
+  </body>
+</html>
+`
+
 /** @type {import('webpack').Configuration} */
 module.exports = {
     output: {
@@ -17,7 +32,6 @@ module.exports = {
         mainFields: ['svelte', 'browser', 'module', 'main']
     },
     stats: {
-        assetsSort: 'size',
         colors: true,
         children: false,
         maxModules: 1,
@@ -25,20 +39,16 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css$/,
-                use: [
-                  'style-loader',
-                  'css-loader',
-                ],
-            },
-            {
                 test: /\.(png|jpe?g)$/i,
                 loader: 'file-loader',
             },
         ]
     },
     plugins: [
-        new HtmlWebpackPlugin({title: 'Sally'}),
+        new HtmlWebpackPlugin({
+            title: 'Sally',
+            templateContent
+        }),
         new FaviconsWebpackPlugin({
             logo: path.resolve(__dirname, 'assets/images/cream.png'),
             favicons: {

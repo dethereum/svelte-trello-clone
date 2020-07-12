@@ -1,5 +1,8 @@
 const { BundleStatsWebpackPlugin } = require('bundle-stats-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
+
 
 const { merge } = require('webpack-merge');
 
@@ -20,15 +23,24 @@ const prod = {
                     loader: 'svelte-loader',
                     options: {
                         dev: false,
-                        emitCss: false,
+                        emitCss: true,
                     }
                 },
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                ],
             },
         ]
     },
     plugins: [
         new BundleStatsWebpackPlugin({ outDir: '../'}),
         new CleanWebpackPlugin(),
+        new MiniCssExtractPlugin({filename: "[name].css"}),
+        new FixStyleOnlyEntriesPlugin(),
     ]
 }
 

@@ -1,6 +1,4 @@
 dependencies:
-  bootstrap: 4.5.0
-  minireset.css: 0.0.6
   svelte: 3.24.0
   sveltestrap: 3.4.0_svelte@3.24.0
 devDependencies:
@@ -18,6 +16,7 @@ devDependencies:
   html-webpack-plugin: 4.3.0_webpack@4.43.0
   husky: 4.2.5
   lint-staged: 10.2.11
+  mini-css-extract-plugin: 0.9.0_webpack@4.43.0
   open: 7.0.4
   prettier: 2.0.5
   prettier-plugin-svelte: 1.1.0_prettier@2.0.5+svelte@3.24.0
@@ -27,6 +26,7 @@ devDependencies:
   webpack: 4.43.0_webpack@4.43.0
   webpack-cli: 3.3.12_webpack@4.43.0
   webpack-dev-middleware: 3.7.2_webpack@4.43.0
+  webpack-fix-style-only-entries: 0.5.1
   webpack-hot-middleware: 2.25.0
   webpack-merge: 5.0.9
 lockfileVersion: 5.1
@@ -1121,13 +1121,6 @@ packages:
     dev: true
     resolution:
       integrity: sha1-aN/1++YMUes3cl6p4+0xDcwed24=
-  /bootstrap/4.5.0:
-    dev: false
-    peerDependencies:
-      jquery: 1.9.1 - 3
-      popper.js: ^1.16.0
-    resolution:
-      integrity: sha512-Z93QoXvodoVslA+PWNdk23Hze4RBYIkpb5h8I2HY2Tu2h7A0LpAgLcyrhrSUyo2/Oxm2l1fRZPs1e5hnxnliXA==
   /brace-expansion/1.1.11:
     dependencies:
       balanced-match: 1.0.0
@@ -4389,6 +4382,20 @@ packages:
     dev: true
     resolution:
       integrity: sha1-e9KC4/WELtKVu3SM3Z8f+iyCRoU=
+  /mini-css-extract-plugin/0.9.0_webpack@4.43.0:
+    dependencies:
+      loader-utils: 1.4.0
+      normalize-url: 1.9.1
+      schema-utils: 1.0.0
+      webpack: 4.43.0_webpack@4.43.0
+      webpack-sources: 1.4.3
+    dev: true
+    engines:
+      node: '>= 6.9.0'
+    peerDependencies:
+      webpack: ^4.4.0
+    resolution:
+      integrity: sha512-lp3GeY7ygcgAmVIcRPBVhIkf8Us7FZjA+ILpal44qLdSu11wmjKQ3d9k15lfD7pO4esu9eUIAW7qiYIBppv40A==
   /minimalistic-assert/1.0.1:
     dev: true
     resolution:
@@ -4419,10 +4426,6 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-Mgd2GdMVzY+x3IJ+oHnVM+KG3lA5c8tnabyJKmHSaG2kAGpudxuOf8ToDkhumF7UzME7DecbQE9uOZhNm7PuJg==
-  /minireset.css/0.0.6:
-    dev: false
-    resolution:
-      integrity: sha512-aluj16Tc1KhEYGDa/tedYzIbZ2Ax/JR25MUQzGkqOrcw/P5OPSlwNNrlLpdULu0xFNnxu2SRHx4rKiIMq3iSTQ==
   /minizlib/2.1.0:
     dependencies:
       minipass: 3.1.3
@@ -4631,6 +4634,17 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==
+  /normalize-url/1.9.1:
+    dependencies:
+      object-assign: 4.1.1
+      prepend-http: 1.0.4
+      query-string: 4.3.4
+      sort-keys: 1.1.2
+    dev: true
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha1-LMDWazHqIwNkWENuNiDYWVTGbDw=
   /npm-run-path/4.0.1:
     dependencies:
       path-key: 3.1.1
@@ -5250,6 +5264,12 @@ packages:
       node: '>= 0.8.0'
     resolution:
       integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==
+  /prepend-http/1.0.4:
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-1PRWKwzjaW5BrFLQ4ALlemNdxtw=
   /prettier-plugin-svelte/1.1.0_prettier@2.0.5+svelte@3.24.0:
     dependencies:
       prettier: 2.0.5
@@ -5376,6 +5396,15 @@ packages:
       node: '>=0.6'
     resolution:
       integrity: sha512-VCdBRNFTX1fyE7Nb6FYoURo/SPe62QCaAyzJvUjwRaIsc+NePBEniHlvxFmmX56+HZphIGtV0XeCirBtpDrTyQ==
+  /query-string/4.3.4:
+    dependencies:
+      object-assign: 4.1.1
+      strict-uri-encode: 1.1.0
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-u7aTucqRXCMlFbIosaArYJBD2+s=
   /querystring-es3/0.2.1:
     dev: true
     engines:
@@ -5988,6 +6017,14 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-FtyOnWN/wCHTVXOMwvSv26d+ko5vWlIDD6zoUJ7LW8vh+ZBC8QdljveRP+crNrtBwioEUWy/4dMtbBjA4ioNlg==
+  /sort-keys/1.1.2:
+    dependencies:
+      is-plain-obj: 1.1.0
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-RBttTTRnmPG05J6JIK37oOVD+a0=
   /sort-keys/2.0.0:
     dependencies:
       is-plain-obj: 1.1.0
@@ -6153,6 +6190,12 @@ packages:
       node: '>= 0.10.0'
     resolution:
       integrity: sha1-hDBgmNhf25kLn6MAsbPM9V6O8B0=
+  /strict-uri-encode/1.1.0:
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-J5siXfHVgrH1TmWt3UNS4Y+qBxM=
   /string-argv/0.3.1:
     dev: true
     engines:
@@ -6846,6 +6889,10 @@ packages:
       webpack: ^4.0.0
     resolution:
       integrity: sha512-1xC42LxbYoqLNAhV6YzTYacicgMZQTqRd27Sim9wn5hJrX3I5nxYy1SxSd4+gjUFsz1dQFj+yEe6zEVmSkeJjw==
+  /webpack-fix-style-only-entries/0.5.1:
+    dev: true
+    resolution:
+      integrity: sha512-G4TBoc5JvIVNR0GXG+t314V4AqpqLJuApX7aDNTZl8yhXojAXCwJXKQeF4SF65UpP/bjrvptmHLPmdA+aGUZMw==
   /webpack-hot-middleware/2.25.0:
     dependencies:
       ansi-html: 0.0.7
@@ -7087,7 +7134,6 @@ packages:
     resolution:
       integrity: sha512-AX3Zw5iPruN5ie6xGRIDgqkT+ZhnRlZMLMHAs8tg7nRruy2Nb+i5o9bwghAogtM08q1dpr2LVoS8KSTMYpWXUw==
 specifiers:
-  bootstrap: ^4.5.0
   bundle-stats-webpack-plugin: ^2.2.0
   clean-webpack-plugin: ^3.0.0
   css-loader: ^3.6.0
@@ -7102,7 +7148,7 @@ specifiers:
   html-webpack-plugin: ^4.3.0
   husky: ^4.2.5
   lint-staged: ^10.2.11
-  minireset.css: ^0.0.6
+  mini-css-extract-plugin: ^0.9.0
   open: ^7.0.4
   prettier: ^2.0.5
   prettier-plugin-svelte: ^1.1.0
@@ -7114,5 +7160,6 @@ specifiers:
   webpack: ^4.43.0
   webpack-cli: ^3.3.12
   webpack-dev-middleware: ^3.7.2
+  webpack-fix-style-only-entries: ^0.5.1
   webpack-hot-middleware: ^2.25.0
   webpack-merge: ^5.0.9
