@@ -1,27 +1,18 @@
-const path = require('path')
-
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack');
+const { merge } = require('webpack-merge');
+
+const common = require('./webpack.config.common.js');
 
 /** @type {import('webpack').Configuration} */
-module.exports = {
+const dev = {
     entry: [
         'webpack-hot-middleware/client',
         './src/index.js'
     ],
-    mode: 'development',
     output: {
-      path: path.resolve(__dirname, 'dist'),
-      filename: 'bundle.js',
-      publicPath: '/',
+        publicPath: '/',
     },
-    resolve: {
-        alias : {
-            svelte: path.resolve('node_modules', 'svelte')
-        },
-        extensions: ['.mjs', '.js', '.svelte'],
-        mainFields: ['svelte', 'browser', 'module', 'main']
-    },
+    mode: 'development',
     module: {
         rules: [
             {
@@ -37,22 +28,12 @@ module.exports = {
                         }
                     }
                 },
-            },
-            {
-                test: /\.css$/,
-                use: [
-                  'style-loader',
-                  'css-loader',
-                ],
-            },
-            {
-                test: /\.(png|jpe?g)$/i,
-                loader: 'file-loader',
-            },
+            }
         ]
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        new HtmlWebpackPlugin(),
     ]
 }
+
+module.exports = merge(common, dev);

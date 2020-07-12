@@ -1,24 +1,16 @@
-const path = require('path')
-
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const { merge } = require('webpack-merge');
+
+const common = require('./webpack.config.common.js');
 
 /** @type {import('webpack').Configuration} */
-module.exports = {
+const prod = {
     entry: './src/index.js',
-    mode: 'production',
     output: {
-      path: path.resolve(__dirname, 'dist'),
-      filename: 'bundle.js',
-      publicPath: './',
+        publicPath: './',
     },
-    resolve: {
-        alias : {
-            svelte: path.resolve('node_modules', 'svelte')
-        },
-        extensions: ['.mjs', '.js', '.svelte'],
-        mainFields: ['svelte', 'browser', 'module', 'main']
-    },
+    mode: 'production',
     module: {
         rules: [
             {
@@ -31,21 +23,11 @@ module.exports = {
                     }
                 },
             },
-            {
-                test: /\.css$/,
-                use: [
-                  'style-loader',
-                  'css-loader',
-                ],
-            },
-            {
-                test: /\.(png|jpe?g)$/i,
-                loader: 'file-loader',
-            },
         ]
     },
     plugins: [
         new CleanWebpackPlugin(),
-        new HtmlWebpackPlugin(),
     ]
 }
+
+module.exports = merge(common, prod)
