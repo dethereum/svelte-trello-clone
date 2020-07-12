@@ -17,6 +17,7 @@ module.exports = {
         mainFields: ['svelte', 'browser', 'module', 'main']
     },
     stats: {
+        assetsSort: 'size',
         colors: true,
         children: false,
         maxModules: 1,
@@ -38,6 +39,15 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({title: 'Sally'}),
-        new FaviconsWebpackPlugin(path.resolve(__dirname, 'assets/images/cream.png')),
+        new FaviconsWebpackPlugin({
+            logo: path.resolve(__dirname, 'assets/images/cream.png'),
+            favicons: {
+                icons : {
+                    coast: false,
+                    windows: false, 
+                    yandex: false
+                }
+            }
+        }),
     ]
 }
