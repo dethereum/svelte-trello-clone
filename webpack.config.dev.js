@@ -1,5 +1,6 @@
 const path = require('path')
 
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack');
 
 /** @type {import('webpack').Configuration} */
@@ -52,5 +53,6 @@ module.exports = {
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
+        new HtmlWebpackPlugin(),
     ]
 }
