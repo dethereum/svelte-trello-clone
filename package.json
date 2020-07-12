@@ -5,6 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "start": "node tools/start.js",
+    "start:prod": "node tools/startProd.js",
     "build": "webpack --config=webpack.config.prod.js"
   },
   "repository": {
