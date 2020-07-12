@@ -1,3 +1,4 @@
+const { BundleStatsWebpackPlugin } = require('bundle-stats-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 const { merge } = require('webpack-merge');
@@ -26,6 +27,7 @@ const prod = {
         ]
     },
     plugins: [
+        new BundleStatsWebpackPlugin({ outDir: '../'}),
         new CleanWebpackPlugin(),
     ]
 }
