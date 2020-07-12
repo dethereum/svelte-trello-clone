@@ -1,7 +1,7 @@
 <script>
     import { Navbar, NavbarBrand } from 'sveltestrap';
 
-    let src = "/cream.png";
+    import src from '../../assets/images/cream.png';
 </script>
 
 <style>

@@ -1,18 +1,16 @@
 const path = require('path')
 
-const webpack = require('webpack');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const CopyPlugin = require('copy-webpack-plugin');
 
 /** @type {import('webpack').Configuration} */
 module.exports = {
-    entry: [
-        'webpack-hot-middleware/client',
-        './src/index.js'
-    ],
-    mode: 'development',
+    entry: './src/index.js',
+    mode: 'production',
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: 'bundle.js',
-      publicPath: '/',
+      publicPath: './',
     },
     resolve: {
         alias : {
@@ -26,14 +24,10 @@ module.exports = {
             {
                 test: /\.(html|svelte)$/,
                 use: {
-                    loader: 'svelte-loader-hot',
+                    loader: 'svelte-loader',
                     options: {
-                        dev: true,
+                        dev: false,
                         emitCss: false,
-                        hotReload: true,
-                        hotOptions: {
-                            noPreserveState: false,
-                        }
                     }
                 },
             },
@@ -51,6 +45,11 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),
+        new CleanWebpackPlugin(),
+        new CopyPlugin({
+            patterns: [
+              { from: 'src/index.html'},
+            ],
+        }),
     ]
 }
