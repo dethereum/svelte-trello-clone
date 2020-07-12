@@ -1,5 +1,6 @@
 const path = require('path')
 
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 /** @type {import('webpack').Configuration} */
@@ -37,5 +38,6 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin(),
+        new FaviconsWebpackPlugin(path.resolve(__dirname, 'assets/images/cream.png')),
     ]
 }

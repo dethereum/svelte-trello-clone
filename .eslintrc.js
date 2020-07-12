@@ -16,7 +16,8 @@ module.exports = {
                 "webpack.config.*.js",
                 ".eslintrc.js",
                 ".prettierrc.js",
-                "tools/*.js"
+                "tools/*.js",
+                "pnpmfile.js"
             ],
             "extends": [
                 "eslint:recommended",
