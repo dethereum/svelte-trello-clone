@@ -3,11 +3,11 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-
-
 const { merge } = require('webpack-merge');
 
 const common = require('./webpack.config.common.js');
+
+process.env.NODE_ENV = 'production';
 
 /** @type {import('webpack').Configuration} */
 const prod = {
@@ -33,6 +33,7 @@ const prod = {
                 use: [
                     MiniCssExtractPlugin.loader,
                     'css-loader',
+                    'postcss-loader'
                 ],
             },
         ]

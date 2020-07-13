@@ -3,11 +3,6 @@ const spdy = require('spdy')
 const path = require('path');
 
 const express = require('express');
-const webpack = require('webpack');
-
-const config = require('../webpack.config.prod.js');
-
-const { stats } = config
 
 const OPTIONS = {
     key: fs.readFileSync(path.resolve(__dirname, '../privateKey.key')),
@@ -17,7 +12,6 @@ const OPTIONS = {
 module.exports = () => {
     const app = express();
     
-    app.use(require('webpack-dev-middleware')(webpack(config), { stats }))
     app.use(express.static('dist'));
 
     // use outdated spdy server because express still does not work with native http2 module

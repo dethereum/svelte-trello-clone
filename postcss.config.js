@@ -26,7 +26,8 @@ const options = {
       extensions: ["svelte"]
     }
   ],
-  whitelist
+  whitelist,
+  whitelistPatterns: process.env.NODE_ENV == 'production' ? [/svelte/] : [],
 };
 
 /* PostCSS */

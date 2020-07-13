@@ -513,14 +513,14 @@ packages:
       integrity: sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==
   /@types/favicons/5.5.0:
     dependencies:
-      '@types/node': 14.0.22
+      '@types/node': 14.0.23
     dev: true
     resolution:
       integrity: sha512-s76OlRaBfqtGu2ZBobnZv2NETfqsQUVfKKlOkKNGo4ArBsqiblodKsnQ3j29hCCgmpQacEfLxealV96za+tzVQ==
   /@types/glob/7.1.3:
     dependencies:
       '@types/minimatch': 3.0.3
-      '@types/node': 14.0.22
+      '@types/node': 14.0.23
     dev: true
     resolution:
       integrity: sha512-SEYeGAIQIQX8NN6LDKprLjbrd5dARM5EXsd8GI/A5l0apYI1fGMWgPHSe4ZKL4eozlAyI+doUE9XbYS4xCkQ1w==
@@ -540,10 +540,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-tHq6qdbT9U1IRSGf14CL0pUlULksvY9OZ+5eEgl1N7t+OA3tGvNpxJCzuKQlsNgCVwbAs670L1vcVQi8j9HjnA==
-  /@types/node/14.0.22:
+  /@types/node/14.0.23:
     dev: true
     resolution:
-      integrity: sha512-emeGcJvdiZ4Z3ohbmw93E/64jRzUHAItSHt8nF7M4TGgQTiWqFVGB8KNpLGFmUHmHLvjvBgFwVlqNcq+VuGv9g==
+      integrity: sha512-Z4U8yDAl5TFkmYsZdFPdjeMa57NOvnaf1tljHzhouaPEp7LCj2JKkejpI1ODviIAQuW4CcQmxkQ77rnLsOOoKw==
   /@types/parse-json/4.0.0:
     dev: true
     resolution:
@@ -568,7 +568,7 @@ packages:
       integrity: sha512-KswB5C7Kwduwjj04Ykz+AjvPcfgv/37Za24O2EDzYNbwyzOo8+ydtvzUfZ5UMguiVu29Gx44l1A6VsPPcmYu9w==
   /@types/webpack-sources/1.4.0:
     dependencies:
-      '@types/node': 14.0.22
+      '@types/node': 14.0.23
       '@types/source-list-map': 0.1.2
       source-map: 0.7.3
     dev: true
@@ -577,7 +577,7 @@ packages:
   /@types/webpack/4.41.21:
     dependencies:
       '@types/anymatch': 1.3.1
-      '@types/node': 14.0.22
+      '@types/node': 14.0.23
       '@types/tapable': 1.0.6
       '@types/uglify-js': 3.9.3
       '@types/webpack-sources': 1.4.0
@@ -4940,10 +4940,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-yi05ZoiuNNEbyT/xXfSySZE+yVnQW6fxPZuFbLyS1s6b5Kw3HzV2PHOM4XR+nsjzkHxByK+2Wg+yCQbe35l8dw==
-  /node-addon-api/3.0.0:
+  /node-addon-api/3.0.1:
     dev: true
     resolution:
-      integrity: sha512-sSHCgWfJ+Lui/u+0msF3oyCgvdkhxDbkCS6Q8uiJquzOimkJBvX6hl5aSSA7DR1XbMpdM8r7phjcF63sF4rkKg==
+      integrity: sha512-YUpjl57P55u2yUaKX5Bgy4t5s6SCNYMg+62XNg+k41aYbBL1NgWrZfcgljR5MxDxHDjzl0qHDNtH6SkW4DXNCA==
   /node-libs-browser/2.2.1:
     dependencies:
       assert: 1.5.0
@@ -6614,7 +6614,7 @@ packages:
     dependencies:
       color: 3.1.2
       detect-libc: 1.0.3
-      node-addon-api: 3.0.0
+      node-addon-api: 3.0.1
       npmlog: 4.1.2
       prebuild-install: 5.3.5
       semver: 7.3.2
