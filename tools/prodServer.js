@@ -1,5 +1,5 @@
 const fs = require('fs');
-const https = require('https');
+const spdy = require('spdy')
 const path = require('path');
 
 const express = require('express');
@@ -20,5 +20,7 @@ module.exports = () => {
     app.use(require('webpack-dev-middleware')(webpack(config), { stats }))
     app.use(express.static('dist'));
 
-    return https.createServer(OPTIONS, app);
+    // use outdated spdy server because express still does not work with native http2 module
+    // https://github.com/expressjs/express/issues/2761
+    return spdy.createServer(OPTIONS, app);
 }
