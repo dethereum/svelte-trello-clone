@@ -1,0 +1,29 @@
+/* FONTS */
+
+/* Small devices (landscape phones, 544px and up) */
+@media (min-width: 544px) {
+  .font-responsive {
+    font-size: 1.5rem;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {
+  .font-responsive {
+    font-size: 2rem;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .font-responsive {
+    font-size: 2.5rem;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .font-responsive {
+    font-size: 3rem;
+  }
+}
