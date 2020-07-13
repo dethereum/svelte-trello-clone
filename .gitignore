@@ -105,3 +105,5 @@ dist
 
 .vscode
 bundle-stats.html
+certificate.crt
+privateKey.key
