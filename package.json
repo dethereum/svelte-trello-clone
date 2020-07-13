@@ -40,6 +40,7 @@
     ]
   },
   "dependencies": {
+    "bootstrap": "^4.5.0",
     "svelte": "3.24.0",
     "sveltestrap": "^3.4.0"
   },
