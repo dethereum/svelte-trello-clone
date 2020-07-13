@@ -17,7 +17,8 @@ module.exports = {
                 ".eslintrc.js",
                 ".prettierrc.js",
                 "tools/*.js",
-                "pnpmfile.js"
+                "pnpmfile.js",
+                "postcss.config.js"
             ],
             "extends": [
                 "eslint:recommended",

@@ -45,6 +45,7 @@
     "sveltestrap": "^3.4.0"
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^2.3.0",
     "bundle-stats-webpack-plugin": "^2.2.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.6.0",
@@ -62,8 +63,10 @@
     "mini-css-extract-plugin": "^0.9.0",
     "open": "^7.0.4",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss-loader": "^3.0.0",
     "prettier": "^2.0.5",
     "prettier-plugin-svelte": "^1.1.0",
+    "purgecss-from-svelte": "^2.0.2",
     "spdy": "^4.0.2",
     "style-loader": "^1.2.1",
     "svelte-loader": "^2.13.6",
