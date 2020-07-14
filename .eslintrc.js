@@ -18,7 +18,8 @@ module.exports = {
                 ".prettierrc.js",
                 "tools/*.js",
                 "pnpmfile.js",
-                "postcss.config.js"
+                "postcss.config.js",
+                "jest.config.js"
             ],
             "extends": [
                 "eslint:recommended",
@@ -37,6 +38,14 @@ module.exports = {
             "processor": 'svelte3/svelte3',
             "rules": {
                 'import/no-duplicates': 0,
+            }
+        },
+        {
+            files: [
+                'src/**/*.test.js'
+            ],
+            "env": {
+                "jest": true
             }
         }
     ]
