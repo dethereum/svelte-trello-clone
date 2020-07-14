@@ -9,11 +9,8 @@ const whitelist = [
   'navbar-brand',
   'navbar',
   'bg-primary',
-  'navbar-light',
-  'font-weight-bold',
+  'navbar-dark',
   'mb-2',
-  // CUSTOM DEFINED
-  'font-responsive',
 ]
 
 const options = {
