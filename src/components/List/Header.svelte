@@ -1,21 +1,12 @@
 <script>
-    import { CardHeader } from "sveltestrap";
+    import { CardHeader, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from "sveltestrap";
+    import { media } from 'svelte-match-media'
 
     import Actions from "./Actions.svelte";
 
-    let hovering;
     let isOpen;
-
-	function enter() {
-		hovering = true;
-	}
-
-	function leave() {
-		hovering = false;
-    }
     
     function toggle() {
-        hovering = false;
         isOpen = !isOpen
     }
 
@@ -34,18 +25,26 @@
     }
 </script>
 
-<style>
-    .active {
-		background-color: #000000;
-	}
-</style>
-
 <CardHeader class="font-weight-bold d-flex align-items-center justify-content-between">
 Done
-<div class:active={hovering} on:mouseenter={enter} on:mouseleave={leave} on:click={toggle}>
-    <svg {...svg}> 
-        <path {...path}/>
-    </svg>
-    <Actions {toggle} {isOpen}/>
-</div>
+{#if $media.mobile}
+    <div on:click={toggle} class="btn btn-sm" role="button">
+        <svg {...svg}> 
+            <path {...path}/>
+        </svg>
+        <Actions {toggle} {isOpen}/>
+    </div>
+{:else}
+    <Dropdown group direction="right" {toggle} {isOpen}>
+        <DropdownToggle color="light">
+            <svg {...svg}> 
+                <path {...path}/>
+            </svg>
+        </DropdownToggle>
+        <DropdownMenu>
+            <DropdownItem header>Actions</DropdownItem>
+            <DropdownItem>Add a Card...</DropdownItem>
+        </DropdownMenu>
+    </Dropdown>
+{/if}
 </CardHeader>
