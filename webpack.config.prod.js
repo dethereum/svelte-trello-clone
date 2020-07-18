@@ -1,6 +1,5 @@
 const { BundleStatsWebpackPlugin } = require('bundle-stats-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const { merge } = require('webpack-merge');
@@ -28,20 +27,11 @@ const prod = {
                     }
                 },
             },
-            {
-                test: /\.css$/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    'css-loader',
-                    'postcss-loader'
-                ],
-            },
         ]
     },
     plugins: [
         new BundleStatsWebpackPlugin({ outDir: '../'}),
         new CleanWebpackPlugin(),
-        new MiniCssExtractPlugin({filename: "[name].css"}),
         new FixStyleOnlyEntriesPlugin(),
         new OptimizeCSSAssetsPlugin({})
     ]

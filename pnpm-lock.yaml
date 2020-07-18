@@ -31,7 +31,6 @@ devDependencies:
   prettier-plugin-svelte: 1.1.0_prettier@2.0.5+svelte@3.24.0
   purgecss-from-svelte: 2.0.2
   spdy: 4.0.2
-  style-loader: 1.2.1_webpack@4.43.0
   svelte-jester: 1.0.6_svelte@3.24.0
   svelte-loader: 2.13.6_svelte@3.24.0
   svelte-loader-hot: 0.3.0_svelte@3.24.0
@@ -8864,18 +8863,6 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==
-  /style-loader/1.2.1_webpack@4.43.0:
-    dependencies:
-      loader-utils: 2.0.0
-      schema-utils: 2.7.0
-      webpack: 4.43.0_webpack@4.43.0
-    dev: true
-    engines:
-      node: '>= 8.9.0'
-    peerDependencies:
-      webpack: ^4.0.0 || ^5.0.0
-    resolution:
-      integrity: sha512-ByHSTQvHLkWE9Ir5+lGbVOXhxX10fbprhLvdg96wedFZb4NDekDPxVKv5Fwmio+QcMlkkNfuK+5W1peQ5CUhZg==
   /stylehacks/4.0.3:
     dependencies:
       browserslist: 4.13.0
@@ -10032,7 +10019,6 @@ specifiers:
   prettier-plugin-svelte: ^1.1.0
   purgecss-from-svelte: ^2.0.2
   spdy: ^4.0.2
-  style-loader: ^1.2.1
   svelte: 3.24.0
   svelte-jester: ^1.0.6
   svelte-loader: ^2.13.6

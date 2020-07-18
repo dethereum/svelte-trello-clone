@@ -75,7 +75,6 @@
     "prettier-plugin-svelte": "^1.1.0",
     "purgecss-from-svelte": "^2.0.2",
     "spdy": "^4.0.2",
-    "style-loader": "^1.2.1",
     "svelte-jester": "^1.0.6",
     "svelte-loader": "^2.13.6",
     "svelte-loader-hot": "^0.3.0",
