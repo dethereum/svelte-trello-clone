@@ -1,8 +1,12 @@
 const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
+const { scss } = require('svelte-preprocess');
 const webpack = require('webpack');
 const { merge } = require('webpack-merge');
 
 const common = require('./webpack.config.common.js');
+
+const BOOTSTRAP_IMPORTS = ['functions', 'variables', 'mixins'].reduce((data, file) => data + `@import "node_modules/bootstrap/scss/_${file}.scss";\n`, '');
+const prependData = '@import "src/scss/variables.scss";\n' + BOOTSTRAP_IMPORTS;
 
 /** @type {import('webpack').Configuration} */
 const dev = {
@@ -27,7 +31,10 @@ const dev = {
                         hotReload: true,
                         hotOptions: {
                             noPreserveState: false,
-                        }
+                        },
+                        preprocess: scss({
+                            prependData,
+                        })
                     }
                 },
             },

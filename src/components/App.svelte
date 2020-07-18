@@ -7,14 +7,8 @@
   let todos = [0,1,2,3,4,5,6,7];
 </script>
 
-<style>
-  /* OVERRIDE BG-PRIMARY WITH ABSOLUTE ZERO || https://coolors.co/0047bb */
-  :global(.bg-primary) {
-    background-color: #0047BB !important;
-  }
-
-  /* Make Lists horizontally scrollable without the bar across browsers */
-  @media (min-width: 768px) {
+<style type="text/scss">
+  @include media-breakpoint-up(md) {
     .scrollable::-webkit-scrollbar {
       display: none;
     }
@@ -25,7 +19,7 @@
       scrollbar-width: none;
     }
   }
-</style>
+</style> 
 
 <TopAppbar /> 
 <Container fluid>
