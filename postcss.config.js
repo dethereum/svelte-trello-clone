@@ -7,7 +7,6 @@ const whitelist = [
   'a',
   // LAYOUT
   'container-fluid',
-  'row',
   'col-10',
   'col-12',
   'col-sm-8',
@@ -18,11 +17,10 @@ const whitelist = [
   'd-flex',
   'align-items-center',
   'justify-content-between',
-  'justify-content-center',
-  'justify-content-md-start',
   // SPACING
   'mb-2',
   'mt-3',
+  'ml-md-4',
   'vh-100',
   'my-3',
   // NAV

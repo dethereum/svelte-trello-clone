@@ -14,7 +14,7 @@
     }
   }
 
-  /* Small devices (landscape phones, 544px and up) */
+  /* Small devices (landscape phones, 576px and up) */
   @media (min-width: 576px) {
     div > :global(a) {
       font-size: 1.2rem;

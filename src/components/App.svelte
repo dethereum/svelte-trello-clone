@@ -1,5 +1,5 @@
 <script>
-  import { Col, Container, Row } from "sveltestrap";
+  import { Col, Container } from "sveltestrap";
 
   import List from './List/List.svelte'
   import TopAppbar from './TopAppbar.svelte'
@@ -12,15 +12,28 @@
   :global(.bg-primary) {
     background-color: #0047BB !important;
   }
+
+  /* Make Lists horizontally scrollable without the bar across browsers */
+  @media (min-width: 768px) {
+    .scrollable::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scrollable {
+      overflow-x: auto;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  }
 </style>
 
 <TopAppbar /> 
 <Container fluid>
-  <Row class="justify-content-center justify-content-md-start">
+  <div id="" class="justify-content-center justify-content-md-start row flex-md-nowrap scrollable">
     {#each todos as todo}
-      <Col xs="10" sm="8" md="4" lg="3" xl="2">
+      <Col xs="10" sm="8" md="4" lg="3" xl="2" class="ml-md-4">
         <List/>
       </Col>
     {/each}
-  </Row>
+  </div>
 </Container>
