@@ -5,6 +5,7 @@ const whitelist = [
   // CORE
   'body',
   'a',
+  'h6',
   // LAYOUT
   'container-fluid',
   'col-10',
@@ -21,16 +22,25 @@ const whitelist = [
   'mb-2',
   'mt-3',
   'ml-md-4',
+  'ml-xl-5',
   'vh-100',
   'my-3',
   // NAV
   'navbar',
   'navbar-brand',
   'navbar-dark',
+  // BTN,
+  'btn-group',
+  'btn-light',
   // CARD
   'card',
   'card-header',
   'card-body',
+  // DROPMENU
+  'dropright',
+  'dropdown-menu',
+  'dropdown-header',
+  'dropdown-item',
   // MODAL
   'modal',
   'show',
