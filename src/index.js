@@ -1,4 +1,4 @@
-import 'bootstrap/dist/css/bootstrap.css'
+import './scss/app.scss'
 
 import { setup } from 'svelte-match-media'
 
