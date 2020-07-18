@@ -18,6 +18,23 @@ const templateContent = ({htmlWebpackPlugin}) => `
 </html>
 `
 
+const BOOTSTRAP_IMPORTS = ['functions', 'variables', 'mixins'].reduce((data, file) => data + `@import "node_modules/bootstrap/scss/_${file}.scss";\n`, '');
+
+/**
+ * @param {*} content - scss/css file contents
+ * @param {*} loaderContext - an object contain information about the env
+ * 
+ * @summary special function for allowing sass imports to work in production context when you can no longer preprocess. 
+ */
+const additionalData = (content, { resourcePath, rootContext }) => {
+    const relativePath = path.relative(rootContext, resourcePath);
+
+    // If style file was emitted from svelte compiler add the imports
+    if (relativePath.includes(".svelte.css")) {
+      return '@import "src/scss/variables.scss";\n' + BOOTSTRAP_IMPORTS + content
+    }
+  };
+
 /** @type {import('webpack').Configuration} */
 module.exports = {
     output: {
@@ -53,7 +70,12 @@ module.exports = {
                         },
                     },
                     'postcss-loader',
-                    'sass-loader'
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            additionalData
+                        },
+                    },
                 ],
             },
         ]

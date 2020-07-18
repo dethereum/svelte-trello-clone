@@ -19,7 +19,8 @@ module.exports = {
                 "tools/*.js",
                 "pnpmfile.js",
                 "postcss.config.js",
-                "jest.config.js"
+                "jest.config.js",
+                "svelte.config.js"
             ],
             "extends": [
                 "eslint:recommended",

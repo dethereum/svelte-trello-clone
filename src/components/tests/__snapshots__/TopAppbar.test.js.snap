@@ -4,11 +4,9 @@ exports[`TopAppbar renders correctly 1`] = `
 <div>
   <nav
     class="mb-2 sticky-top navbar navbar-dark bg-primary"
-    color="primary"
-    dark="true"
   >
     <div
-      class="container svelte-1d1fyaa"
+      class="container"
     >
       <a
         class="navbar-brand"
@@ -16,7 +14,7 @@ exports[`TopAppbar renders correctly 1`] = `
       >
         <img
           alt="Sally Brand"
-          class="d-inline-block align-middle svelte-1d1fyaa"
+          class="d-inline-block align-middle svelte-11uoh0o"
         />
         
       Sally
