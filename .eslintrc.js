@@ -14,25 +14,42 @@ module.exports = {
         {
             "files": [
                 "webpack.config.*.js",
-                ".eslintrc.js",
-                ".prettierrc.js",
                 "tools/*.js",
-                "pnpmfile.js",
-                "postcss.config.js",
-                "jest.config.js",
-                "svelte.config.js"
             ],
+            "globals": {
+                __dirname: true,
+            },
             "extends": [
-                "eslint:recommended",
-                "plugin:node/recommended-script"
+                "plugin:node/recommended-module"
             ],
+            "plugins": ["simple-import-sort", 'import'],
             "env": {
-                node: true,
                 browser: false,
             },
             "rules": {
-                "node/no-unpublished-require": 0
+                "simple-import-sort/sort": 2,
+                "sort-imports": 0,
+                "import/first": 2,
+                "import/newline-after-import": 2,
+                "import/no-duplicates": 2
             }
+        },
+        {
+            "files": [
+                ".eslintrc.js",
+                ".prettierrc.js",
+                "pnpmfile.js",
+                "postcss.config.js",
+                "jest.config.js",
+                "svelte.config.js",
+                "whitelist.js"
+            ],
+            "extends": [
+                "plugin:node/recommended-script"
+            ],
+            "env": {
+                browser: false,
+            },
         },
         {
             "files": ['*.svelte'],

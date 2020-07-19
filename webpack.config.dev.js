@@ -1,9 +1,9 @@
-const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
-const { scss } = require('svelte-preprocess');
-const webpack = require('webpack');
-const { merge } = require('webpack-merge');
+import HardSourceWebpackPlugin from 'hard-source-webpack-plugin';
+import webpack from 'webpack';
+import { merge } from 'webpack-merge';
 
-const common = require('./webpack.config.common.js');
+import { preprocess } from './svelte.config.js';
+import common from './webpack.config.common.js';
 
 /** @type {import('webpack').Configuration} */
 const dev = {
@@ -29,11 +29,23 @@ const dev = {
                         hotOptions: {
                             noPreserveState: false,
                         },
-                        preprocess: scss({
-                            prependData: `@import "/home/haiturtle/Public/svelte-trello-clone/node_modules/bootstrap/scss/_functions.scss";\n@import "/home/haiturtle/Public/svelte-trello-clone/node_modules/bootstrap/scss/_variables.scss";\n@import "/home/haiturtle/Public/svelte-trello-clone/node_modules/bootstrap/scss/_mixins.scss";\n`,
-                        })
+                        preprocess
                     }
                 },
+            },
+            {
+                test: /\.s?css$/,
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                          importLoaders: 2,
+                        },
+                    },
+                    'postcss-loader',
+                    'sass-loader'
+                ],
             },
         ]
     },
@@ -43,4 +55,4 @@ const dev = {
     ]
 }
 
-module.exports = merge(common, dev);
+export default merge(common, dev);

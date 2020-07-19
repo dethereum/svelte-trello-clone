@@ -1,7 +1,16 @@
+const { resolve } = require('path');
 const { scss } = require('svelte-preprocess');
+
+const { files } = require('./whitelist.js');
+
+const prependData = files.reduce((data, file) => {
+    const filePath = resolve(__dirname, `node_modules/bootstrap/scss/${file}.scss`);
+
+    return data + `@import "${filePath}";`
+}, '');
 
 module.exports = {
     preprocess: scss({
-        prependData: `@import "/home/haiturtle/Public/svelte-trello-clone/node_modules/bootstrap/scss/_functions.scss";\n@import "/home/haiturtle/Public/svelte-trello-clone/node_modules/bootstrap/scss/_variables.scss";\n@import "/home/haiturtle/Public/svelte-trello-clone/node_modules/bootstrap/scss/_mixins.scss";\n`,
-    })
+        prependData,
+    }),
 };

@@ -1,19 +1,15 @@
-const express = require('express');
-const webpack = require('webpack');
+import express from 'express';
+import webpack from 'webpack';
+import dev from 'webpack-dev-middleware'
+import hot from 'webpack-hot-middleware'
 
-const config = require('../webpack.config.dev.js');
+import config from '../webpack.config.dev.js';
 
 const compiler = webpack(config);
 
 const { stats } = config
 
-// middlewares
-const dev = require('webpack-dev-middleware')(compiler, { stats })
-const hot = require('webpack-hot-middleware')(compiler)
-const assets = express.static('src')
-
-
-module.exports = () => express()
-    .use(dev)
-    .use(hot)
-    .use(assets);
+export default () => express()
+    .use(dev(compiler, { stats }))
+    .use(hot(compiler))
+    .use(express.static('src'));

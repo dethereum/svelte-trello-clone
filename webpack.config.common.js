@@ -1,8 +1,6 @@
-const path = require('path')
-
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { resolve } from 'path';
 
 const templateContent = ({htmlWebpackPlugin}) => `
 <!DOCTYPE html>
@@ -18,32 +16,15 @@ const templateContent = ({htmlWebpackPlugin}) => `
 </html>
 `
 
-const BOOTSTRAP_IMPORTS = ['functions', 'variables', 'mixins'].reduce((data, file) => data + `@import "node_modules/bootstrap/scss/_${file}.scss";\n`, '');
-
-/**
- * @param {*} content - scss/css file contents
- * @param {*} loaderContext - an object contain information about the env
- * 
- * @summary special function for allowing sass imports to work in production context when you can no longer preprocess. 
- */
-const additionalData = (content, { resourcePath, rootContext }) => {
-    const relativePath = path.relative(rootContext, resourcePath);
-
-    // If style file was emitted from svelte compiler add the imports
-    if (relativePath.includes(".svelte.css")) {
-      return '@import "src/scss/variables.scss";\n' + BOOTSTRAP_IMPORTS + content
-    }
-  };
-
 /** @type {import('webpack').Configuration} */
-module.exports = {
+export default {
     output: {
-      path: path.resolve(__dirname, 'dist'),
+      path: resolve(__dirname, 'dist'),
       filename: 'bundle.js',
     },
     resolve: {
         alias : {
-            svelte: path.resolve('node_modules', 'svelte')
+            svelte: resolve('node_modules', 'svelte')
         },
         extensions: ['.mjs', '.js', '.svelte'],
         mainFields: ['svelte', 'browser', 'module', 'main']
@@ -59,25 +40,6 @@ module.exports = {
                 test: /\.(png|jpe?g)$/i,
                 loader: 'file-loader',
             },
-            {
-                test: /\.s?css$/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    {
-                        loader: 'css-loader',
-                        options: {
-                          importLoaders: 2,
-                        },
-                    },
-                    'postcss-loader',
-                    {
-                        loader: 'sass-loader',
-                        options: {
-                            additionalData
-                        },
-                    },
-                ],
-            },
         ]
     },
     plugins: [
@@ -86,7 +48,7 @@ module.exports = {
             templateContent
         }),
         new FaviconsWebpackPlugin({
-            logo: path.resolve(__dirname, 'assets/images/cream.png'),
+            logo: resolve(__dirname, 'assets/images/cream.png'),
             favicons: {
                 icons : {
                     coast: false,
@@ -95,6 +57,5 @@ module.exports = {
                 }
             }
         }),
-        new MiniCssExtractPlugin({filename: "[name].css"}),
     ]
 }

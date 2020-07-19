@@ -1,12 +1,17 @@
-const { BundleStatsWebpackPlugin } = require('bundle-stats-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
-const { merge } = require('webpack-merge');
+import { BundleStatsWebpackPlugin } from 'bundle-stats-webpack-plugin';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import OptimizeCSSAssetsPlugin from "optimize-css-assets-webpack-plugin";
+import FixStyleOnlyEntriesPlugin from "webpack-fix-style-only-entries";
+import { merge } from 'webpack-merge';
 
-const common = require('./webpack.config.common.js');
+import { preprocess } from './svelte.config.js';
+import common from './webpack.config.common.js';
+import { files } from './whitelist.js'
 
 process.env.NODE_ENV = 'production';
+
+const SASS_LOADER_IMPORTS = files.reduce((data, file) => data + `@import "~bootstrap/scss/${file}.scss";`, '');
 
 /** @type {import('webpack').Configuration} */
 const prod = {
@@ -23,18 +28,43 @@ const prod = {
                     loader: 'svelte-loader',
                     options: {
                         dev: false,
-                        emitCss: true
+                        emitCss: true,
+                        preprocess,
                     }
                 },
+            },
+            {
+                test: /\.s?css$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader',
+                        options: {
+                          importLoaders: 2,
+                        },
+                    },
+                    'postcss-loader',
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            additionalData: (content, { resourcePath }) => {
+                                if (resourcePath.includes(".svelte.css")) {
+                                    return '@import "src/scss/variables.scss";' + SASS_LOADER_IMPORTS + content;
+                                }
+                            }
+                        },
+                    },
+                ],
             },
         ]
     },
     plugins: [
         new BundleStatsWebpackPlugin({ outDir: '../'}),
         new CleanWebpackPlugin(),
+        new MiniCssExtractPlugin({filename: "[name].css"}),
         new FixStyleOnlyEntriesPlugin(),
         new OptimizeCSSAssetsPlugin({})
     ]
 }
 
-module.exports = merge(common, prod)
+export default merge(common, prod)
