@@ -8,15 +8,15 @@
 </script>
 
 <style type="text/scss">
-  @include media-breakpoint-up(md) {
-    .scrollable::-webkit-scrollbar {
-      display: none;
-    }
-
-    .scrollable {
+  .scrollable {
+    @include media-breakpoint-up(md) {
       overflow-x: auto;
-      -ms-overflow-style: none;
       scrollbar-width: none;
+      -ms-overflow-style: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
   }
 </style> 
