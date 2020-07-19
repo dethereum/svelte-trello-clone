@@ -1,9 +1,9 @@
-import HardSourceWebpackPlugin from 'hard-source-webpack-plugin';
-import webpack from 'webpack';
-import { merge } from 'webpack-merge';
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
+const webpack = require('webpack');
+const { merge } = require('webpack-merge');
 
-import { preprocess } from './svelte.config.js';
-import common from './webpack.config.common.js';
+const { preprocess } = require('./svelte.config.js');
+const common = require('./webpack.config.common.js');
 
 /** @type {import('webpack').Configuration} */
 const dev = {
@@ -55,4 +55,4 @@ const dev = {
     ]
 }
 
-export default merge(common, dev);
+module.exports = merge(common, dev);

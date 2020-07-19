@@ -1,6 +1,6 @@
-import open from 'open'
+const open = require('open')
 
-import makeServer from './server.js';
+const makeServer = require('./server.js');
 
 (async () => {
     const app = makeServer();

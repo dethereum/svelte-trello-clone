@@ -1,14 +1,14 @@
-import express from 'express';
-import { readFileSync } from 'fs';
-import { resolve } from 'path';
-import { createServer } from 'spdy';
+const express = require('express');
+const { readFileSync } = require('fs');
+const { resolve } = require('path');
+const { createServer } = require('spdy');
 
 const OPTIONS = {
     key: readFileSync(resolve(__dirname, '../privateKey.key')),
     cert: readFileSync(resolve(__dirname, '../certificate.crt')),
 };
 
-export default () => {
+module.exports = () => {
     const app = express().use(express.static('dist'));
 
     // use outdated spdy server because express still does not work with native http2 module

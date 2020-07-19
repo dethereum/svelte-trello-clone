@@ -1,6 +1,6 @@
-import webpack from 'webpack';
+const webpack = require('webpack');
 
-import config from '../webpack.config.prod.js';
+const config = require('../webpack.config.prod.js');
 
 const compiler = webpack(config);
 

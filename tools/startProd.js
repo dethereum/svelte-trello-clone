@@ -1,6 +1,6 @@
-import open from 'open'
+const open = require('open');
 
-import makeServer from './prodServer.js';
+const makeServer = require('./prodServer.js');
 
 /**
  * This function is to make lighthouse auditing simple on localhost

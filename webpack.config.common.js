@@ -1,6 +1,7 @@
-import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { resolve } from 'path';
+const { resolve } = require('path');
+
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const templateContent = ({htmlWebpackPlugin}) => `
 <!DOCTYPE html>
@@ -17,7 +18,7 @@ const templateContent = ({htmlWebpackPlugin}) => `
 `
 
 /** @type {import('webpack').Configuration} */
-export default {
+module.exports = {
     output: {
       path: resolve(__dirname, 'dist'),
       filename: 'bundle.js',

@@ -1,13 +1,13 @@
-import { BundleStatsWebpackPlugin } from 'bundle-stats-webpack-plugin';
-import { CleanWebpackPlugin } from 'clean-webpack-plugin';
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import OptimizeCSSAssetsPlugin from "optimize-css-assets-webpack-plugin";
-import FixStyleOnlyEntriesPlugin from "webpack-fix-style-only-entries";
-import { merge } from 'webpack-merge';
+const { BundleStatsWebpackPlugin } = require('bundle-stats-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
+const { merge } = require('webpack-merge');
 
-import { preprocess } from './svelte.config.js';
-import common from './webpack.config.common.js';
-import { files } from './whitelist.js'
+const { preprocess } = require('./svelte.config.js');
+const common = require('./webpack.config.common.js');
+const { files } = require('./whitelist.js');
 
 process.env.NODE_ENV = 'production';
 
@@ -67,4 +67,4 @@ const prod = {
     ]
 }
 
-export default merge(common, prod)
+module.exports = merge(common, prod)

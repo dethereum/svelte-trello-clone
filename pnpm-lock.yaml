@@ -4,9 +4,6 @@ dependencies:
   svelte-match-media: 1.1.0
   sveltestrap: 3.5.0_svelte@3.24.0
 devDependencies:
-  '@babel/core': 7.10.5
-  '@babel/node': 7.10.5_@babel+core@7.10.5
-  '@babel/plugin-transform-modules-commonjs': 7.10.4_@babel+core@7.10.5
   '@fullhuman/postcss-purgecss': 2.3.0
   '@sucrase/jest-plugin': 2.0.0
   '@testing-library/svelte': 3.0.0_svelte@3.24.0
@@ -17,7 +14,6 @@ devDependencies:
   eslint: 7.5.0
   eslint-plugin-import: 2.22.0_eslint@7.5.0
   eslint-plugin-node: 11.1.0_eslint@7.5.0
-  eslint-plugin-simple-import-sort: 5.0.3_eslint@7.5.0
   eslint-plugin-svelte3: 2.7.3_eslint@7.5.0+svelte@3.24.0
   express: 4.17.1
   favicons-webpack-plugin: 3.0.1_webpack@4.43.0
@@ -42,7 +38,7 @@ devDependencies:
   svelte-jester: 1.0.6_svelte@3.24.0
   svelte-loader: 2.13.6_svelte@3.24.0
   svelte-loader-hot: 0.3.0_svelte@3.24.0
-  svelte-preprocess: 4.0.8_63b23cbdbcd4a1a585db5f7c10213878
+  svelte-preprocess: 4.0.8_sass@1.26.10+svelte@3.24.0
   webpack: 4.43.0_webpack@4.43.0
   webpack-dev-middleware: 3.7.2_webpack@4.43.0
   webpack-fix-style-only-entries: 0.5.1
@@ -177,23 +173,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-i6rgnR/YgPEQzZZnbTHHuZdlE8qyoBNalD6F+q4vAFlcMEcqmkoG+mPqJYJCo63qPf74+Y1UZsl3l6f7/RIkmA==
-  /@babel/node/7.10.5_@babel+core@7.10.5:
-    dependencies:
-      '@babel/core': 7.10.5
-      '@babel/register': 7.10.5_@babel+core@7.10.5
-      commander: 4.1.1
-      core-js: 3.6.5
-      lodash: 4.17.19
-      node-environment-flags: 1.0.6
-      regenerator-runtime: 0.13.5
-      resolve: 1.17.0
-      v8flags: 3.2.0
-    dev: true
-    hasBin: true
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-    resolution:
-      integrity: sha512-suosS7zZ2roj+fYVCnDuVezUbRc0sdoyF0Gj/1FzWxD4ebbGiBGtL5qyqHH4NO34B5m4vWWYWgyNhSsrqS8vwA==
   /@babel/parser/7.10.5:
     dev: true
     engines:
@@ -300,31 +279,6 @@ packages:
       '@babel/core': ^7.0.0-0
     resolution:
       integrity: sha512-KoK9ErH1MBlCPxV0VANkXW2/dw4vlbGDrFgz8bmUsBGYkFRcbRwMh6cIJubdPrkxRwuGdtCk0v/wPTKbQgBjkg==
-  /@babel/plugin-transform-modules-commonjs/7.10.4_@babel+core@7.10.5:
-    dependencies:
-      '@babel/core': 7.10.5
-      '@babel/helper-module-transforms': 7.10.5
-      '@babel/helper-plugin-utils': 7.10.4
-      '@babel/helper-simple-access': 7.10.4
-      babel-plugin-dynamic-import-node: 2.3.3
-    dev: true
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-    resolution:
-      integrity: sha512-Xj7Uq5o80HDLlW64rVfDBhao6OX89HKUmb+9vWYaLXBZOma4gA6tw4Ni1O5qVDoZWUV0fxMYA0aYzOawz0l+1w==
-  /@babel/register/7.10.5_@babel+core@7.10.5:
-    dependencies:
-      '@babel/core': 7.10.5
-      find-cache-dir: 2.1.0
-      lodash: 4.17.19
-      make-dir: 2.1.0
-      pirates: 4.0.1
-      source-map-support: 0.5.19
-    dev: true
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-    resolution:
-      integrity: sha512-eYHdLv43nyvmPn9bfNfrcC4+iYNwdQ8Pxk1MFJuU/U5LpSYl/PH4dFMazCYZDFVi8ueG3shvO+AQfLrxpYulQw==
   /@babel/runtime-corejs3/7.10.5:
     dependencies:
       core-js-pure: 3.6.5
@@ -1741,12 +1695,6 @@ packages:
       '@babel/core': ^7.0.0
     resolution:
       integrity: sha512-Nkqgtfe7j6PxLO6TnCQQlkMm8wdTdnIF8xrdpooHCuD5hXRzVEPbPneTJKknH5Dsv3L8ip9unHDAp48YQ54Dkg==
-  /babel-plugin-dynamic-import-node/2.3.3:
-    dependencies:
-      object.assign: 4.1.0
-    dev: true
-    resolution:
-      integrity: sha512-jZVI+s9Zg3IqA/kdi0i6UDCybUI3aSBLnglhYbSSjKlV7yF1F/5LWv8MakQmvYpnbJDS6fcBL2KzHSxNCMtWSQ==
   /babel-plugin-istanbul/6.0.0:
     dependencies:
       '@babel/helper-plugin-utils': 7.10.4
@@ -3460,14 +3408,6 @@ packages:
       eslint: '>=5.16.0'
     resolution:
       integrity: sha512-oUwtPJ1W0SKD0Tr+wqu92c5xuCeQqB3hSCHasn/ZgjFdA9iDGNkNf2Zi9ztY7X+hNuMib23LNGRm6+uN+KLE3g==
-  /eslint-plugin-simple-import-sort/5.0.3_eslint@7.5.0:
-    dependencies:
-      eslint: 7.5.0
-    dev: true
-    peerDependencies:
-      eslint: '>=5.0.0'
-    resolution:
-      integrity: sha512-1rf3AWiHeWNCQdAq0iXNnlccnH1UDnelGgrPbjBBHE8d2hXVtOudcmy0vTF4hri3iJ0MKz8jBhmH6lJ0ZWZLHQ==
   /eslint-plugin-svelte3/2.7.3_eslint@7.5.0+svelte@3.24.0:
     dependencies:
       eslint: 7.5.0
@@ -4399,14 +4339,6 @@ packages:
     dev: true
     resolution:
       integrity: sha1-0nRXAQJabHdabFRXk+1QL8DGSaE=
-  /homedir-polyfill/1.0.3:
-    dependencies:
-      parse-passwd: 1.0.0
-    dev: true
-    engines:
-      node: '>=0.10.0'
-    resolution:
-      integrity: sha512-eSmmWE5bZTK2Nou4g0AI3zZ9rswp7GRKoKXS1BLUkvPviOqs4YTN1djQIqrXy9k5gEtdLPy86JjRwsNM9tnDcA==
   /hosted-git-info/2.8.8:
     dev: true
     resolution:
@@ -6478,13 +6410,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-YUpjl57P55u2yUaKX5Bgy4t5s6SCNYMg+62XNg+k41aYbBL1NgWrZfcgljR5MxDxHDjzl0qHDNtH6SkW4DXNCA==
-  /node-environment-flags/1.0.6:
-    dependencies:
-      object.getownpropertydescriptors: 2.1.0
-      semver: 5.7.1
-    dev: true
-    resolution:
-      integrity: sha512-5Evy2epuL+6TM0lCQGpFIj6KwiEsGh1SrHUhTbNX+sLbBtjidPZFAnVK9y5yU1+h//RitLbRHTIMyxQPtxMdHw==
   /node-int64/0.4.0:
     dev: true
     resolution:
@@ -6962,12 +6887,6 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-OOY5b7PAEFV0E2Fir1KOkxchnZNCdowAJgQ5NuxjpBKTRP3pQhwkrkxqQjeoKJ+fO7bCpmIZaogI4eZGDMEGOw==
-  /parse-passwd/1.0.0:
-    dev: true
-    engines:
-      node: '>=0.10.0'
-    resolution:
-      integrity: sha1-bVuTSkVpk7I9N/QKOC1vFmao5cY=
   /parse-png/1.1.2:
     dependencies:
       pngjs: 3.4.0
@@ -9018,9 +8937,8 @@ packages:
     dev: false
     resolution:
       integrity: sha512-EzHDBUrZ7PqBjc90AwZA7Sk/l2SNdq6CB82PpIeq3iRUqw9JPfMlImk2zXZDdN6e9Ka71kUEyWTlR/mas0WE/g==
-  /svelte-preprocess/4.0.8_63b23cbdbcd4a1a585db5f7c10213878:
+  /svelte-preprocess/4.0.8_sass@1.26.10+svelte@3.24.0:
     dependencies:
-      '@babel/core': 7.10.5
       '@types/pug': 2.0.4
       '@types/sass': 1.16.0
       detect-indent: 6.0.0
@@ -9626,14 +9544,6 @@ packages:
       node: 8.x.x || >=10.10.0
     resolution:
       integrity: sha512-Rw6vJHj1mbdK8edjR7+zuJrpDtKIgNdAvTSAcpYfgMIw+u2dPDntD3dgN4XQFLU2/fvFQdzj+EeSGfd/jnY5fQ==
-  /v8flags/3.2.0:
-    dependencies:
-      homedir-polyfill: 1.0.3
-    dev: true
-    engines:
-      node: '>= 0.10'
-    resolution:
-      integrity: sha512-mH8etigqMfiGWdeXpaaqGfs6BndypxusHHcv2qSHyZkGEznCd/qAXCWWRzeowtL54147cktFOC4P5y+kl8d8Jg==
   /validate-npm-package-license/3.0.4:
     dependencies:
       spdx-correct: 3.1.1
@@ -10041,9 +9951,6 @@ packages:
     resolution:
       integrity: sha512-aePbxDmcYW++PaqBsJ+HYUFwCdv4LVvdnhBy78E57PIor8/OVvhMrADFFEDh8DHDFRv/O9i3lPhsENjO7QX0+A==
 specifiers:
-  '@babel/core': ^7.10.5
-  '@babel/node': ^7.10.5
-  '@babel/plugin-transform-modules-commonjs': ^7.10.4
   '@fullhuman/postcss-purgecss': ^2.3.0
   '@sucrase/jest-plugin': ^2.0.0
   '@testing-library/svelte': ^3.0.0
@@ -10055,7 +9962,6 @@ specifiers:
   eslint: ^7.4.0
   eslint-plugin-import: ^2.22.0
   eslint-plugin-node: ^11.1.0
-  eslint-plugin-simple-import-sort: ^5.0.3
   eslint-plugin-svelte3: ^2.7.3
   express: ^4.17.1
   favicons-webpack-plugin: ^3.0.1
