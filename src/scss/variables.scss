@@ -2,4 +2,27 @@ $theme-colors: (
     "primary": #0047BB /* OVERRIDE PRIMARY WITH ABSOLUTE ZERO || https://coolors.co/0047bb */
 );
 
+/* BOOTSTRAP V5 VAlUES */
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+);
+
+/* enable and adjust rfs mixin */
 $enable-responsive-font-sizes: true;
+$rfs-base-font-size: 0.8rem !default;
+
+$list-group-item-padding-y: 0.5rem;
+$list-group-item-padding-x: 1rem;

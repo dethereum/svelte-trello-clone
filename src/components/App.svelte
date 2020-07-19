@@ -23,9 +23,14 @@
 
 <TopAppbar /> 
 <Container fluid>
-  <div id="" class="justify-content-center justify-content-md-start row flex-md-nowrap scrollable">
+  <div id="" class="justify-content-center flex-column flex-md-row justify-content-md-start row flex-md-nowrap scrollable">
     {#each todos as todo}
-      <Col xs="10" sm="8" md="4" lg="3" xl="2" class="ml-md-4 ml-xl-5">
+      <Col 
+        xs={{ size: 10, offset: 1 }} 
+        sm={{ size: 6, offset: 3 }} 
+        md="4" 
+        xl="3" 
+        class="mb-5 mb-sm-4 ml-md-4 ml-xl-5 col-xxl-2">
         <List/>
       </Col>
     {/each}
