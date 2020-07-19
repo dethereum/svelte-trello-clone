@@ -5,20 +5,10 @@
 </script>
 
 <style type="text/scss">
-  @include media-breakpoint-up(sm) {
-    div > :global(a) {
-      font-size: 1.2rem;
-      font-weight: 500;
-    }
+  div {
+    @include rfs(3rem);
   }
-
-  @include media-breakpoint-up(lg) {
-    div > :global(a) {
-      font-size: 1.4rem;
-      font-weight: 200;
-    }
-  }
-
+  
   img {
     max-width: 2rem;
   }

@@ -3,7 +3,7 @@ const { scss } = require('svelte-preprocess');
 
 const { files } = require('./whitelist.js');
 
-const prependData = files.reduce((data, file) => {
+const IMPORTS = files.reduce((data, file) => {
     const filePath = resolve(__dirname, `node_modules/bootstrap/scss/${file}.scss`);
 
     return data + `@import "${filePath}";`
@@ -11,6 +11,6 @@ const prependData = files.reduce((data, file) => {
 
 module.exports = {
     preprocess: scss({
-        prependData,
+        prependData: '@import "src/scss/variables.scss";' + IMPORTS,
     }),
 };
