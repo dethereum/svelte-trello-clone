@@ -6,6 +6,7 @@
     import Menu from "./ActionsMenu.svelte";
     import Icon from "./ActionsIcon.svelte";
 
+    export let name = '';
     let isOpen;
     
     function toggle() {
@@ -14,7 +15,7 @@
 </script>
 
 <CardHeader class="font-weight-bold d-flex align-items-center justify-content-between">
-Done
+{name}
 {#if $media.mobile}
     <Modal {toggle} {isOpen}>
         <Icon />

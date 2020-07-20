@@ -10,6 +10,9 @@ module.exports = {
         "eslint:recommended",
         "plugin:import/recommended"
     ],
+    "settings": {
+        "svelte3/ignore-styles": () => true
+    },
     "overrides": [
         {
             "files": [

@@ -25,6 +25,7 @@ devDependencies:
   jest-transform-stub: 2.0.0
   lint-staged: 10.2.11
   mini-css-extract-plugin: 0.9.0_webpack@4.43.0
+  miragejs: 0.1.40
   open: 7.0.4
   optimize-css-assets-webpack-plugin: 5.0.3_webpack@4.43.0
   postcss-loader: 3.0.0
@@ -984,6 +985,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-VcSlQhkil4ReYmg1KkN+WqHyYfZ2XfZxDsKAHSfST1GEz/RQHxKZbX+KhFKtKflnL0F4e6DlNQj3vznMNXCR2w==
+  /@miragejs/pretender-node-polyfill/0.1.2:
+    dev: true
+    resolution:
+      integrity: sha512-M/BexG/p05C5lFfMunxo/QcgIJnMT2vDVCd00wNqK2ImZONIlEETZwWJu1QtLxtmYlSHlCFl3JNzp0tLe7OJ5g==
   /@sinonjs/commons/1.8.1:
     dependencies:
       type-detect: 4.0.8
@@ -3720,6 +3725,12 @@ packages:
       '0': node >=0.6.0
     resolution:
       integrity: sha1-lpGEQOMEGnpBT4xS48V06zw+HgU=
+  /fake-xml-http-request/2.1.1:
+    dev: true
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha512-Kn2WYYS6cDBS5jq/voOfSGCA0TafOYAUPbEp8mUVpD/DVV5bQIDjlq+MLLvNUokkbTpjBVlLDaM5PnX+PwZMlw==
   /fast-deep-equal/3.1.3:
     dev: true
     resolution:
@@ -4609,6 +4620,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-IClj+Xz94+d7irH5qRyfJonOdfTzuDaifE6ZPWfx0N0+/ATZCbuTPq2prFl526urkQd90WyUKIh1DfBQ2hMz9A==
+  /inflected/2.0.4:
+    dev: true
+    resolution:
+      integrity: sha512-HQPzFLTTUvwfeUH6RAGjD8cHS069mBqXG5n4qaxX7sJXBhVQrsGgF+0ZJGkSuN6a8pcUWB/GXStta11kKi/WvA==
   /inflight/1.0.6:
     dependencies:
       once: 1.4.0
@@ -5902,6 +5917,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-FHGYEyhZly5GgMoppZkshVZpqlw=
+  /lodash.assign/4.2.0:
+    dev: true
+    resolution:
+      integrity: sha1-DZnzzNem0mHRm9rrkkUAXShYCOc=
   /lodash.bind/2.3.0:
     dependencies:
       lodash._createwrapper: 2.3.0
@@ -5910,10 +5929,30 @@ packages:
     dev: true
     resolution:
       integrity: sha1-wqjhi2jl7MFS4rFoJmEW/qWwFsw=
+  /lodash.camelcase/4.3.0:
+    dev: true
+    resolution:
+      integrity: sha1-soqmKIorn8ZRA1x3EfZathkDMaY=
+  /lodash.clonedeep/4.5.0:
+    dev: true
+    resolution:
+      integrity: sha1-4j8/nE+Pvd6HJSnBBxhXoIblzO8=
+  /lodash.compact/3.0.1:
+    dev: true
+    resolution:
+      integrity: sha1-VAzjg3dFl1gHRx4WtKK6IeclbKU=
   /lodash.defaultsdeep/4.6.1:
     dev: true
     resolution:
       integrity: sha512-3j8wdDzYuWO3lM3Reg03MuQR957t287Rpcxp1njpEa8oDrikb+FwGdW3n+FELh/A6qib6yPit0j/pv9G/yeAqA==
+  /lodash.find/4.6.0:
+    dev: true
+    resolution:
+      integrity: sha1-ywcE1Hq3F4n/oN6Ll92Sb7iLE7E=
+  /lodash.flatten/4.4.0:
+    dev: true
+    resolution:
+      integrity: sha1-8xwiIlqWMtK7+OSt2+8kCqdlph8=
   /lodash.foreach/2.3.0:
     dependencies:
       lodash._basecreatecallback: 2.3.0
@@ -5921,6 +5960,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-CDQEyR6EbudyRf3512UZxosq8Wg=
+  /lodash.forin/4.4.0:
+    dev: true
+    resolution:
+      integrity: sha1-XT8grlZAEfvog4H32YlJyclRlzE=
   /lodash.forown/2.3.0:
     dependencies:
       lodash._basecreatecallback: 2.3.0
@@ -5929,14 +5972,42 @@ packages:
     dev: true
     resolution:
       integrity: sha1-JPtKr4ANRfwtxgv+w84EyDajrX8=
+  /lodash.get/4.4.2:
+    dev: true
+    resolution:
+      integrity: sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=
+  /lodash.has/4.5.2:
+    dev: true
+    resolution:
+      integrity: sha1-0Z9NwQlQWMzL4rDN9O4P5Ko3yGI=
   /lodash.identity/2.3.0:
     dev: true
     resolution:
       integrity: sha1-awGiEMlIU1XCqRO0i2cRIZoXPe0=
+  /lodash.invokemap/4.6.0:
+    dev: true
+    resolution:
+      integrity: sha1-F0jNpdiw74NpxOs+xUwh/rofLWI=
+  /lodash.isempty/4.4.0:
+    dev: true
+    resolution:
+      integrity: sha1-b4bL7di+TsmHvpqvM8loTbGzHn4=
+  /lodash.isequal/4.5.0:
+    dev: true
+    resolution:
+      integrity: sha1-QVxEePK8wwEgwizhDtMib30+GOA=
   /lodash.isfunction/2.3.0:
     dev: true
     resolution:
       integrity: sha1-aylz5HpkfPEucNZ2rqE2Q3BuUmc=
+  /lodash.isfunction/3.0.9:
+    dev: true
+    resolution:
+      integrity: sha512-AirXNj15uRIMMPihnkInB4i3NHeb4iBtNg9WRWuK2o31S+ePwwNmDPaTL3o7dTJ+VXNZim7rFs4rxN4YU1oUJw==
+  /lodash.isinteger/4.0.4:
+    dev: true
+    resolution:
+      integrity: sha1-YZwK89A/iwTDH1iChAt3sRzWg0M=
   /lodash.isobject/2.3.0:
     dependencies:
       lodash._objecttypes: 2.3.0
@@ -5947,6 +6018,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-PI+41bW/S/kK4G4U8qUwpO2TXh0=
+  /lodash.isplainobject/4.0.6:
+    dev: true
+    resolution:
+      integrity: sha1-fFJqUtibRcRcxpC4gWO+BJf1UMs=
   /lodash.keys/2.3.0:
     dependencies:
       lodash._renative: 2.3.0
@@ -5955,6 +6030,18 @@ packages:
     dev: true
     resolution:
       integrity: sha1-s1D0+Syqn0WkouzwGEVM8vKK4lM=
+  /lodash.lowerfirst/4.3.1:
+    dev: true
+    resolution:
+      integrity: sha1-3jx7EuAsZSSgBZwvbLfFxSZVoT0=
+  /lodash.map/4.6.0:
+    dev: true
+    resolution:
+      integrity: sha1-dx7Hg540c9nEzeKLGTlMNWL09tM=
+  /lodash.mapvalues/4.6.0:
+    dev: true
+    resolution:
+      integrity: sha1-G6+lAF3p3W9PJmaMMMo3IwzJaJw=
   /lodash.memoize/4.1.2:
     dev: true
     resolution:
@@ -5963,6 +6050,14 @@ packages:
     dev: true
     resolution:
       integrity: sha1-MFnWKNUbv5N80qC2/Dp/ISpmnCw=
+  /lodash.pick/4.4.0:
+    dev: true
+    resolution:
+      integrity: sha1-UvBWEP/53tQiYRRB7R/BI6AwAbM=
+  /lodash.snakecase/4.1.1:
+    dev: true
+    resolution:
+      integrity: sha1-OdcUo1NXFHg3rv1ktdy7Fr7Nj40=
   /lodash.sortby/4.7.0:
     dev: true
     resolution:
@@ -5981,6 +6076,14 @@ packages:
     dev: true
     resolution:
       integrity: sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
+  /lodash.uniqby/4.7.0:
+    dev: true
+    resolution:
+      integrity: sha1-2ZwHpmnp5tJOE2Lf4mbGdhavEwI=
+  /lodash.values/4.3.0:
+    dev: true
+    resolution:
+      integrity: sha1-o6bCsOvsxcLLocF+bmIP6BtT00c=
   /lodash/4.17.15:
     dev: true
     resolution:
@@ -6265,6 +6368,39 @@ packages:
       node: '>= 8'
     resolution:
       integrity: sha512-EzTZN/fjSvifSX0SlqUERCN39o6T40AMarPbv0MrarSFtIITCBh7bi+dU8nxGFHuqs9jdIAeoYoKuQAAASsPPA==
+  /miragejs/0.1.40:
+    dependencies:
+      '@miragejs/pretender-node-polyfill': 0.1.2
+      inflected: 2.0.4
+      lodash.assign: 4.2.0
+      lodash.camelcase: 4.3.0
+      lodash.clonedeep: 4.5.0
+      lodash.compact: 3.0.1
+      lodash.find: 4.6.0
+      lodash.flatten: 4.4.0
+      lodash.forin: 4.4.0
+      lodash.get: 4.4.2
+      lodash.has: 4.5.2
+      lodash.invokemap: 4.6.0
+      lodash.isempty: 4.4.0
+      lodash.isequal: 4.5.0
+      lodash.isfunction: 3.0.9
+      lodash.isinteger: 4.0.4
+      lodash.isplainobject: 4.0.6
+      lodash.lowerfirst: 4.3.1
+      lodash.map: 4.6.0
+      lodash.mapvalues: 4.6.0
+      lodash.pick: 4.4.0
+      lodash.snakecase: 4.1.1
+      lodash.uniq: 4.5.0
+      lodash.uniqby: 4.7.0
+      lodash.values: 4.3.0
+      pretender: 3.4.3
+    dev: true
+    engines:
+      node: 6.* || 8.* || >= 10.*
+    resolution:
+      integrity: sha512-7zxIcynzdS6425KZ2+TWD6F6DqESorulSDW2QBXf4iKyVn/J5vSielcubAK8sTKUefTPCrSRi7PwgNOb0JlmIg==
   /mississippi/3.0.0:
     dependencies:
       concat-stream: 1.6.2
@@ -7504,6 +7640,13 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-1PRWKwzjaW5BrFLQ4ALlemNdxtw=
+  /pretender/3.4.3:
+    dependencies:
+      fake-xml-http-request: 2.1.1
+      route-recognizer: 0.3.4
+    dev: true
+    resolution:
+      integrity: sha512-AlbkBly9R8KR+R0sTCJ/ToOeEoUMtt52QVCetui5zoSmeLOU3S8oobFsyPLm1O2txR6t58qDNysqPnA1vVi8Hg==
   /prettier-plugin-svelte/1.1.0_prettier@2.0.5+svelte@3.24.0:
     dependencies:
       prettier: 2.0.5
@@ -8062,6 +8205,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-ii4iagi25WusVoiC4B4lq7pbXfAp3D9v5CwfkY33vffw2+pkDjY1D8GaN7spsxvCSx8dkPqOZCEZyfxcmJG2IA==
+  /route-recognizer/0.3.4:
+    dev: true
+    resolution:
+      integrity: sha512-2+MhsfPhvauN1O8KaXpXAOfR/fwe8dnUXVM+xw7yt40lJRfPVQxV6yryZm0cgRvAj5fMF/mdRZbL2ptwbs5i2g==
   /rsvp/4.8.5:
     dev: true
     engines:
@@ -9973,6 +10120,7 @@ specifiers:
   jest-transform-stub: ^2.0.0
   lint-staged: ^10.2.11
   mini-css-extract-plugin: ^0.9.0
+  miragejs: ^0.1.40
   open: ^7.0.4
   optimize-css-assets-webpack-plugin: ^5.0.3
   postcss-loader: ^3.0.0
